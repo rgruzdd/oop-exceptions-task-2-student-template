@@ -16,5 +16,4 @@ def divide(str_with_ints: str) -> Union[float, str]:
     except ZeroDivisionError:
         return 'Error code: division by zero'
 
-print(divide("4 0"))
 
