@@ -2,12 +2,22 @@ from typing import Union
 
 
 def divide(str_with_ints: str) -> Union[float, str]:
-    """
-    Returns the result of dividing two numbers or an error message.
-    :arg
-        str_with_ints: str, ex. "4 2";
-    :return
-        result of dividing: float, ex. 2.0 (4 / 2 = 2.0);
-        error response in "Error code: {error message}: str;
-    """
-    raise NotImplementedError('Implement me!')
+    num = []
+
+    for x in str_with_ints.split():
+        try:
+            num.append(int(x))
+        except ValueError:
+            print('Error code: invalid literal for int() with base 10: ' + "'" + x + "'")
+            return
+    try:
+        num_list = num[0] / num[1]
+        return float(num_list)
+
+    except ZeroDivisionError:
+        print('Error code: division by zero')
+
+
+
+
+
